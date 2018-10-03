@@ -1,0 +1,56 @@
+# Spring Boot settings
+server: 
+    port: 8090
+    
+# Spring Boot settings
+security:
+    basic:
+        enabled: false
+    user:
+        name: psmuser
+        password: password
+endpoints:
+    loggers:
+        sensitive: false
+management:
+    context-path: /internal/manage
+    security:
+        enabled: false    
+            
+# Spring settings
+spring: 
+    jmx: 
+        enabled: false
+    jackson: 
+        serialization-inclusion: non_null
+    http: 
+        multipart:
+            max-file-size: 50MB
+            max-request-size: 50MB
+    
+# Actuator settings
+#endpoints: 
+#    cors: 
+#        allowed-headers: "*" 
+#        allowed-methods: GET,POST
+#        allowed-origins: "*"
+
+
+# AWS S3 settings
+aws:
+    accesskey: AKIAJB7Y5FHSTTWCNZ2Q
+    secretkey: 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
+    s3:
+        region: US_EAST_1
+        bucketname: nsf-dev-psm-file-store
+
+# PSM settings        
+psm: 
+    s3: 
+        max-retry: 10
+        transfer: 
+            partsize: 5 #MB
+        multipart: 
+            max-filesize: 50  #MB
+            max-requestsize: 50   #MB
+        
